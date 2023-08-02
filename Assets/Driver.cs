@@ -6,11 +6,28 @@ public class Driver : MonoBehaviour
 {
    [SerializeField] float steerSpeed = 300f;
    [SerializeField] float moveSpeed = 20f;
+   [SerializeField] float slowSpeed = 5f;
+   [SerializeField] float boostSpeed = 60f;
 
-    void Start()
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Car Started!");
+        if (other.tag == "Boost")
+        {
+            moveSpeed = boostSpeed;
+            Debug.Log("BOOST");
+        }
+            
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("SLOW");
+
+        moveSpeed = slowSpeed;
+    }   
+
+
 
     void Update()
     {
