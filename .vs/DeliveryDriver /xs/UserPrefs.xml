@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DC3F627B-3110-2756-A184-99E90E46E802}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="512e1c42-ab0f-43a6-ac95-76d5be1a6a74" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Delivery.cs">
+    <Files>
+      <File FileName="Assets/FollowCamera.cs" Line="6" Column="2" />
+      <File FileName="Assets/Delivery.cs" Line="34" Column="2" />
+      <File FileName="Assets/Driver.cs" Line="20" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DeliveryDriver " expanded="True">
+            <Node name="Assets" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
