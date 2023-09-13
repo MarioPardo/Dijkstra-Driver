@@ -15,21 +15,7 @@ public class Driver : MonoBehaviour
     Waypoint currentWaypoint;
     Transform targetTransform;
 
-    public bool isDriving = false;
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Boost")
-        {
-            moveSpeed = boostSpeed;
-        }
-            
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        moveSpeed = slowSpeed;
-    }   
+    public bool isDriving = false;  
 
     public void DriveTo(Waypoint waypoint)
     {
@@ -87,14 +73,20 @@ public class Driver : MonoBehaviour
         transform.Translate(0,moveAmount,0);
         */
 
-        float distToTarget = Vector3.Distance(transform.position, targetTransform.position);
-        //Debug.Log("Dist To Target:" + distToTarget);
+        if (isDriving)
+        { 
+            float distToTarget = Vector3.Distance(transform.position, targetTransform.position);
+            //Debug.Log("Dist To Target:" + distToTarget);
 
-        if (distToTarget < 0.5f)
-        {
-            Debug.Log("Reached");
-            StopAllCoroutines();
-            isDriving = false;
+            //draw line to target
+            Debug.DrawLine((Vector2)transform.position, (Vector2)targetTransform.position);
+
+            if (distToTarget < 0.5f)
+            {
+               Debug.Log("Reached");
+               StopAllCoroutines();
+               isDriving = false;
+            }
         }
 
     }

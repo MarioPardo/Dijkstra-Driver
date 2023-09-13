@@ -8,9 +8,9 @@ public class WaypointSystem : MonoBehaviour
     [SerializeField] GameObject car;
     Driver carDriver;
 
-    [SerializeField] Waypoint startWaypoint;
-    [SerializeField] Waypoint packageWaypoint;
-    [SerializeField] Waypoint deliveryWaypoint;
+    public Waypoint startWaypoint;
+    public Waypoint packageWaypoint;
+    public Waypoint deliveryWaypoint;
 
     Stack<Waypoint> pathStack = new Stack<Waypoint>();
 
@@ -18,18 +18,19 @@ public class WaypointSystem : MonoBehaviour
 
     private void Start()
     {
-        car.transform.position = startWaypoint.transform.position;
         carDriver = car.GetComponent<Driver>();
+    }
 
+    public void StartGame()
+    {
+        car.transform.position = startWaypoint.transform.position;
         CalculatePath();
         //PrintPath();
         StartCoroutine(StartDriving());
     }
 
-
     void CalculatePath()
     {
-
 
         //path to delivery
         List<Waypoint> tempList = FindShortestPath(packageWaypoint, deliveryWaypoint);
@@ -81,7 +82,7 @@ public class WaypointSystem : MonoBehaviour
         }
     }
 
-    public List<Waypoint> FindShortestPath(Waypoint startingWaypoint, Waypoint endWaypoint)
+    List<Waypoint> FindShortestPath(Waypoint startingWaypoint, Waypoint endWaypoint)
     {
         // Initialize dictionaries to store distance and previous waypoints
         Dictionary<Waypoint, float> distance = new Dictionary<Waypoint, float>();
