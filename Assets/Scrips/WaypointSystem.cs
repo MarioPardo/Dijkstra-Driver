@@ -16,20 +16,13 @@ public class WaypointSystem : MonoBehaviour
 
     bool finished = false;
 
-    void Awake()
-    {
-        
-    }
-
-
-
     private void Start()
     {
         car.transform.position = startWaypoint.transform.position;
         carDriver = car.GetComponent<Driver>();
 
         CalculatePath();
-        PrintPath();
+        //PrintPath();
         StartCoroutine(StartDriving());
     }
 
@@ -55,8 +48,6 @@ public class WaypointSystem : MonoBehaviour
             pathStack.Push(tempList[i]);
         }
 
-        Debug.Log("Path has " + pathStack.Count + "stops");
-
     }
 
     void PrintPath()
@@ -72,17 +63,12 @@ public class WaypointSystem : MonoBehaviour
 
     IEnumerator StartDriving()
     {
-        int i = 1;
         while(pathStack.Count > 0)
         {
-            Debug.Log("Driving to stop + " + i);
             car.GetComponent<Driver>().DriveTo(pathStack.Pop());
-            i++;
             yield return new WaitUntil(() => carDriver.isDriving == false);
             
         }
-
-        finished = true;
         Debug.Log("Finished Path!");
     }
 
@@ -93,11 +79,6 @@ public class WaypointSystem : MonoBehaviour
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(t.position, 1.5f);
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     public List<Waypoint> FindShortestPath(Waypoint startingWaypoint, Waypoint endWaypoint)
