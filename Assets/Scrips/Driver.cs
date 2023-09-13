@@ -22,21 +22,17 @@ public class Driver : MonoBehaviour
         if (other.tag == "Boost")
         {
             moveSpeed = boostSpeed;
-            //Debug.Log("BOOST");
         }
             
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //Debug.Log("SLOW");
-
         moveSpeed = slowSpeed;
     }   
 
     public void DriveTo(Waypoint waypoint)
     {
-        Debug.Log("DRiveTO");
         currentWaypoint = waypoint;
         targetTransform = waypoint.transform;
 
@@ -51,7 +47,6 @@ public class Driver : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("ROTATIN");
             Vector2 direction = targetTransform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 

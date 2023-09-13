@@ -1,22 +1,24 @@
 ﻿<Properties StartupConfiguration="{DC3F627B-3110-2756-A184-99E90E46E802}|">
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="512e1c42-ab0f-43a6-ac95-76d5be1a6a74" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Delivery.cs">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d2c69469-06c7-4246-a7df-d933d30a4a69" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scrips/WaypointSystem.cs">
     <Files>
-      <File FileName="Assets/FollowCamera.cs" Line="6" Column="2" />
-      <File FileName="Assets/Delivery.cs" Line="34" Column="2" />
-      <File FileName="Assets/Driver.cs" Line="20" Column="13" />
+      <File FileName="Assets/Scrips/Waypoint.cs" Line="38" Column="41" />
+      <File FileName="Assets/Scrips/Waypoint.cs" Line="40" Column="22" />
+      <File FileName="Assets/Scrips/Driver.cs" Line="37" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DeliveryDriver " expanded="True">
-            <Node name="Assets" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="Scrips" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

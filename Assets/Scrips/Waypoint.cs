@@ -5,7 +5,7 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     [SerializeField] List<Waypoint> neighbours;
-    [SerializeField] Dictionary<Waypoint, float> waypointDict = new Dictionary<Waypoint, float>();
+    [SerializeField] public Dictionary<Waypoint, float> waypointDict = new Dictionary<Waypoint, float>();
 
     void calculateDistances()
     {
